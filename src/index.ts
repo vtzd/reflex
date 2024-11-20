@@ -6,15 +6,9 @@ const rootInstances: ReflexRootInstances = []
 let rootId = 0;
 
 
-const createElement = (payload: ReflexElement) => {
-    // Remove references
-    const { config, children } = Object.assign({}, payload);
-    return { config, children }
-}
+const dereferenceElement = (payload: ReflexElement) => Object.assign({}, payload)
 
-const isRootNode = (node: ReflexNode) => {
-
-}
+const isRootNode = (node: ReflexNode) => { }
 
 const render = (element: ReflexElement, node: ReflexNode) => {
     // Check if node has alread been rendered.
