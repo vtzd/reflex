@@ -1,16 +1,24 @@
-import { ReflexElement, ReflexNode, ReflexRootId, ReflexRootInstances } from "./types/index.types";
+import { ReflexHTMLTag, ReflexElement, ReflexNode, ReflexRootId, ReflexRootInstances, ReflexElementConfig } from "./types/index.types";
 
-const ROOT_KEY: ReflexRootId = "ReflexRootId"
+const ROOT_ID: ReflexRootId = "ReflexRootId"
 const rootInstances: ReflexRootInstances = []
 
-let rootId = 0;
+const rootId = 0;
 
 
-const dereferenceElement = (payload: ReflexElement) => Object.assign({}, payload)
+const dereferenceElement = ( element: ReflexElement ): ReflexElement => {
+    return Object.assign( {}, element )
+}
 
-const isRootNode = (node: ReflexNode) => { }
+const isRootNode = ( node: ReflexNode ): boolean => {
+    return node.id === ROOT_ID
+}
 
-const render = (element: ReflexElement, node: ReflexNode) => {
+type RenderArgs = {
+    element: ReflexElement,
+    node: ReflexNode
+}
+const render = ( { element, node }: RenderArgs ): void => {
     // Check if node has alread been rendered.
     // If so, update it. Otherwise mount it.
     // if (isRootNode(node)) {
