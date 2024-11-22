@@ -1,4 +1,4 @@
-import { ReflexHTMLTag, ReflexElement, ReflexNode, ReflexRootId, ReflexRootInstances, ReflexElementConfig } from "./types/index.types";
+import { ReflexElement, ReflexNode, ReflexRootId, ReflexRootInstances } from "./types/index.types";
 
 const ROOT_ID: ReflexRootId = "ReflexRootId"
 const rootInstances: ReflexRootInstances = []
